@@ -45,7 +45,7 @@ $("#munchies1trigger").on("click", function (){
           $("#munchies1div").html("your munchkins and truck arrays do not match");
         }
       } else {
-        $("#munchies1div").html("your code works, but is this a higher order function?");
+        $("#munchies1div").html("no syntax errors, but is this a higher order function?");
       }
    } catch(err){
         $("#munchies1div").html("syntax error:  try again");
