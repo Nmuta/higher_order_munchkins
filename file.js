@@ -20,13 +20,22 @@ $("#munchies1trigger").on("click", function (){
     }
 
     try {
-      truck.push(eval(user_input));
+      var matching_arrays = true;
+      eval(user_input);
       if( ( (user_input).indexOf("function") > -1 ) || ( (user_input).indexOf("=>")  > -1 )) {
-        truck.forEach(function(thing){
+        for (var i = 0; i < munchkins.length; i++) {
+          if (munchkins[i] != truck[i]){
+            matching_arrays = false;
+            break;
+          }
+        }
+        if (matching_arrays){
           $("#munchies1div").html("ready to roll");
           $("#cats1_image").hide();
           $("#cats2_image").show();
-        });
+        } else {
+          $("#munchies1div").html("your munchkins and truck arrays do not match");
+        }
       } else {
         $("#munchies1div").html("your code works, but is this a higher order function?");
       }
